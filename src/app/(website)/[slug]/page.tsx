@@ -28,7 +28,7 @@ export default async function Page({
 
   const sections = page.blocks;
 
-  console.log(sections[2]);
+  console.log(sections[1]);
 
   return (
     <>

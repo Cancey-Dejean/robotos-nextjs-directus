@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 
 const containerSizes = {
   base: "max-w-[1240px]",
+  contained: "max-w-[1040px]",
 };
 
 export default function Container({
