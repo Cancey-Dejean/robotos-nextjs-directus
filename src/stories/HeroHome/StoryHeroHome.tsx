@@ -10,14 +10,16 @@ import { robots } from "@/lib/animations";
 import { Buttons } from "@/types";
 
 type HeroHomeBlockProps = {
-  item: {
-    heading?: string;
-    availability?: boolean;
-    buttons: Buttons[];
-  };
+  heading?: string;
+  availability?: boolean;
+  buttons: Buttons[];
 };
 
-export default function HeroHome({ item }: HeroHomeBlockProps) {
+export default function HeroHome({
+  heading,
+  availability,
+  buttons,
+}: HeroHomeBlockProps) {
   const { scrollY } = useScroll();
   const imageContainerStyles = "absolute";
   const imageStyles =
@@ -37,7 +39,6 @@ export default function HeroHome({ item }: HeroHomeBlockProps) {
   const image10Y = useTransform(scrollY, [0, 500], [0, 500]);
   const image11Y = useTransform(scrollY, [0, 500], [0, 550]);
 
-  const { heading, availability, buttons } = item;
   return (
     <>
       <motion.section className="relative flex h-[450px] flex-col justify-center overflow-hidden bg-red sm:h-[800px] md:h-[1048px]">

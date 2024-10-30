@@ -22,11 +22,13 @@ export async function getPages() {
     readItems("pages", {
       fields: [
         "*",
-        "blocks",
         "blocks.*",
-        // "blocks.*.*.*",
+        "blocks.*.*.*",
         "blocks.item.*",
+        "blocks.item.headlineElement.*",
         "blocks.item.image.*",
+        "blocks.item.bgImg.*",
+        "blocks.item.topImage.*",
       ],
     }),
   );

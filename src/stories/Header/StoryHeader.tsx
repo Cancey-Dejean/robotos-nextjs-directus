@@ -12,14 +12,14 @@ import useCloseMobileMenuOnResize from "@/hooks/useCloseMobileMenuOnResize";
 import NavLink from "@/components/ui/Header/NavLink";
 import Link from "next/link";
 import Container from "@/components/ui/container";
-import { ImageProps, NavItem } from "@/types";
-import { NavlinkStyles } from ".";
+import { NavItem } from "@/types";
+import { NavlinkStyles } from "../../components/ui/Header";
 
 export default function HeaderContent({
   menu,
   logo,
 }: {
-  logo: ImageProps;
+  logo: string;
   menu: NavItem[];
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -58,13 +58,7 @@ export default function HeaderContent({
         {/* Logo */}
 
         <div className="relative z-[52] flex items-center sm:border-r sm:border-r-[#494949]">
-          <Image
-            src={`${process.env.NEXT_PUBLIC_DIRECTUS_API_ENDPOINT}/assets/${logo.filename_disk}`}
-            alt={logo.title}
-            height={28}
-            width={28}
-            priority
-          />
+          <Image src={logo} alt="Logo" height={28} width={28} priority />
 
           <Link
             href="/"

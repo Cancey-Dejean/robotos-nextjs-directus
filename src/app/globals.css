@@ -91,7 +91,7 @@
   }
 }
 
-@layer components {
+@layer utilities {
   .hero-text {
     span {
       text-shadow: -17px 17px 0 var(--gray-900);
@@ -102,5 +102,9 @@
         -webkit-text-stroke: 2px var(--gray-900);
       }
     }
+  }
+
+  .title-md {
+    font-size: clamp(1.875rem, 1.542rem + 1.67vw, 3rem); /* 30px - 48px */
   }
 }

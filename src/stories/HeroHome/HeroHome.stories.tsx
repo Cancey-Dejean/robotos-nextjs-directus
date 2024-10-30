@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import HeroHome from ".";
+import HeroHome from "./StoryHeroHome";
 
 const meta = {
   title: "Components/Heroes/HeroHome",
@@ -16,16 +16,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    item: {
-      heading: "Heading",
-      availability: true,
-      buttons: [
-        {
-          label: "Button",
-          url: "/",
-          variant: "default",
-        },
-      ],
-    },
+    heading: "Heading",
+    availability: true,
+    buttons: [
+      {
+        label: "Button",
+        url: "/",
+        variant: "default",
+      },
+    ],
   },
 };
