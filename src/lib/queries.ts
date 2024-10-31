@@ -22,8 +22,19 @@ export async function getPages() {
     readItems("pages", {
       fields: [
         "*",
+        {
+          seo: [
+            "title",
+            "meta_description",
+            "canonical_url",
+            "no_index",
+            "no_follow",
+            "og_image.filename_disk",
+            "sitemap_change_frequency",
+            "sitemap_priority",
+          ],
+        },
         "blocks.*",
-        "blocks.*.*.*",
         "blocks.item.*",
         "blocks.item.headlineElement.*",
         "blocks.item.image.*",
@@ -37,7 +48,26 @@ export async function getPages() {
 export async function getPosts() {
   return directus.request(
     readItems("posts", {
-      fields: ["*", "featured_image.*"],
+      fields: [
+        "date_created",
+        "date_updated",
+        "title",
+        "slug",
+        "content",
+        "featuredImg.filename_disk",
+        {
+          seo: [
+            "title",
+            "meta_description",
+            "canonical_url",
+            "no_index",
+            "no_follow",
+            "og_image.filename_disk",
+            "sitemap_change_frequency",
+            "sitemap_priority",
+          ],
+        },
+      ],
       sort: ["-date_created"],
     }),
   );

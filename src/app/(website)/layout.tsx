@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "../globals.css";
 import Providers from "@/components/providers";
 import Header from "@/components/ui/Header";
-import Footer from "@/components/ui/Footer";
+// import Footer from "@/components/ui/Footer";
 import { rightGrotesk, spaceMono } from "@/utils/fonts";
 
 export const metadata: Metadata = {
@@ -21,9 +21,10 @@ export default function RootLayout({
         className={`${spaceMono.variable} ${rightGrotesk.variable} antialiased`}
       >
         <Providers>
-          <div className="grid min-h-[100dvh] grid-rows-[auto_1fr_auto]">
+          <div className="grid min-h-[100dvh] grid-rows-[1fr_auto]">
             <Header />
             <main>{children}</main>
+            <footer>Footer</footer>
             {/* <Footer /> */}
           </div>
         </Providers>

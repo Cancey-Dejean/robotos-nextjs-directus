@@ -25,3 +25,24 @@ export type NavItem = {
 export type NavItemProps = {
   menuList: NavItem[];
 };
+
+export type SeoProps = {
+  title: string;
+  meta_description: string;
+  canonical_url: string;
+  no_index: boolean;
+  no_follow: boolean;
+  sitemap_change_frequency: string;
+  sitemap_priority: string;
+  og_image: ImageProps;
+};
+
+export type PostProps = {
+  title: string;
+  slug: string;
+  date_created: string;
+  date_updated: string;
+  content: string;
+  featuredImg: ImageProps;
+  seo: SeoProps;
+};

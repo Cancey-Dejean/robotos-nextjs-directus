@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/Button";
 
 export default function PageNotFound({
   title = "404",
-  message = "This page could not be found.",
+  message = "Page could not be found.",
   buttonText = "Go home",
   buttonUrl = "/",
 }: {
