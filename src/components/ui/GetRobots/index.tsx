@@ -49,7 +49,7 @@ export default function GetRobots({
             <Image
               src={`${process.env.NEXT_PUBLIC_DIRECTUS_API_ENDPOINT}/assets/${topImage.filename_disk}`}
               className="scale-[1.1]"
-              alt={topImage.title}
+              alt={topImage.title || ""}
               fill
             />
           </div>

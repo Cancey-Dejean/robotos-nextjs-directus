@@ -1,6 +1,7 @@
 import GetRobots from "@/components/ui/GetRobots";
 import HeroHome from "@/components/ui/Heroes/HeroHome";
 import ImageStack from "@/components/ui/ImageStack";
+import Stats from "@/components/ui/Stats";
 
 type Section = {
   collection: string;
@@ -20,5 +21,9 @@ export const RenderSections = (section: Section) => {
     case "block_image_stack":
       // @ts-expect-error: No type for item
       return <ImageStack {...section} key={section.id} item={section.item} />;
+
+    case "block_stats":
+      // @ts-expect-error: No type for item
+      return <Stats {...section} key={section.id} item={section.item} />;
   }
 };

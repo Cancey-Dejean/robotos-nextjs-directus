@@ -16,7 +16,7 @@ export const rowImages = [
 ];
 export default function ImageStack({ title }: { title?: string }) {
   return (
-    <section className="bg-gray-900 p-0">
+    <section className="bg-gray-900">
       <span className="sr-only">{title}</span>
       <div className="flex flex-col md:-space-y-[160px]">
         {rowImages.map(({ src, alt }, index) => (

@@ -106,5 +106,6 @@
 
   .title-md {
     font-size: clamp(1.875rem, 1.542rem + 1.67vw, 3rem); /* 30px - 48px */
+    line-height: 1;
   }
 }
