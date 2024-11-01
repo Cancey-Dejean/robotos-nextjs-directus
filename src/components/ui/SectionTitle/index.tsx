@@ -20,7 +20,7 @@ export default function SectionTitle({
 }: SectionTitleProps) {
   return (
     <Comp
-      className={cn("font-rightGrotesk uppercase", titleSizes[size], className)}
+      className={cn("uppercase", titleSizes[size], className)}
       {...restProps}
     >
       {children}

@@ -59,8 +59,8 @@ export default function HeaderContent({
 
         <div className="relative z-[52] flex items-center sm:border-r sm:border-r-[#494949]">
           <Image
-            src={`${process.env.NEXT_PUBLIC_DIRECTUS_API_ENDPOINT}/assets/${logo.filename_disk}`}
-            alt={logo.title}
+            src={`${process.env.NEXT_PUBLIC_ASSETS_URL}${logo.filename_disk}?key=optimized`}
+            alt={logo.title || ""}
             height={28}
             width={28}
             priority

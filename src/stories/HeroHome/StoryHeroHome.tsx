@@ -49,7 +49,7 @@ export default function HeroHome({
         >
           <h1
             className={cn(
-              "hero-text text-center font-rightGrotesk text-[12vw] uppercase leading-none text-white md:text-[15vw] 3xl:text-[270px] [&_span]:transition-all [&_span]:duration-300 [&_span]:ease-in-out",
+              "hero-text text-center text-[12vw] uppercase leading-none text-white md:text-[15vw] 3xl:text-[270px] [&_span]:transition-all [&_span]:duration-300 [&_span]:ease-in-out",
             )}
           >
             {heading ? (

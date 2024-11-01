@@ -1,3 +1,4 @@
+import Faq from "@/components/ui/Faq";
 import GetRobots from "@/components/ui/GetRobots";
 import HeroHome from "@/components/ui/Heroes/HeroHome";
 import ImageStack from "@/components/ui/ImageStack";
@@ -30,5 +31,9 @@ export const RenderSections = (section: Section) => {
     case "block_latest_posts":
       // @ts-expect-error: No type for item
       return <LatestPosts {...section} key={section.id} item={section.item} />;
+
+    case "block_faq":
+      // @ts-expect-error: No type for item
+      return <Faq {...section} key={section.id} item={section.item} />;
   }
 };

@@ -144,7 +144,7 @@ export default function Stats({
 
             {variations.map(({ title, items }, index) => (
               <div className="flex-1" key={index}>
-                {title && <p className="mb-3 font-rightGrotesk">{title}</p>}
+                {title && <h3 className="mb-3">{title}</h3>}
 
                 {items && (
                   <div className="flex h-full flex-col gap-2">

@@ -1,66 +1,34 @@
-import Image from "next/image";
 import Link from "next/link";
-import Container from "@/components/ui/container";
+import { Button } from "@/components/ui/Button";
+import { getFooter } from "@/lib/queries";
 
-export default function Footer({
-  linkOneText = "Documentation",
-  linkTwoText = "Examples",
-  linkThreeText = "Go to nextjs.org →",
-}: {
-  linkOneText: string;
-  linkTwoText: string;
-  linkThreeText: string;
-}) {
+export default async function Footer() {
+  const footer = await getFooter();
+
+  const { titleLineOne, titleLineTwo, btnLabel, btnUrl, content } = footer;
+
   return (
-    <footer className="bg-black py-4 text-white">
-      <Container className="flex flex-wrap items-center justify-center gap-6">
-        <Link
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {/* <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          /> */}
-          {linkOneText}
-        </Link>
+    <footer id="footer" className="bg-gray-900 px-5 py-10 text-center md:py-20">
+      <h2 className="mb-10 flex flex-col text-[16vw] uppercase leading-[.8] text-white lg:mb-14 [&_span]:transition-all [&_span]:duration-300 [&_span]:ease-in-out">
+        <span className="hover:text-yellow-100">{titleLineOne}</span>
 
-        <Link
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {/* <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          /> */}
-          {linkTwoText}
-        </Link>
-        <Link
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {/* <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          /> */}
-          {linkThreeText}
-        </Link>
-      </Container>
+        {titleLineTwo && (
+          <span className="hover:text-purple-100">{titleLineTwo}</span>
+        )}
+      </h2>
+
+      {btnLabel && (
+        <Button asChild variant="purple" className="mb-6 mt-4">
+          <Link href={btnUrl}>{btnLabel}</Link>
+        </Button>
+      )}
+
+      {content && (
+        <div
+          className="mx-auto max-w-[400px] text-white [&_a]:text-white [&_a]:underline"
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
+      )}
     </footer>
   );
 }

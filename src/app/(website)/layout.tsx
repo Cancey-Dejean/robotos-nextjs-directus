@@ -4,6 +4,7 @@ import Providers from "@/components/providers";
 import Header from "@/components/ui/Header";
 // import Footer from "@/components/ui/Footer";
 import { rightGrotesk, spaceMono } from "@/utils/fonts";
+import Footer from "@/components/ui/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,8 +25,7 @@ export default function RootLayout({
           <div className="grid min-h-[100dvh] grid-rows-[1fr_auto]">
             <Header />
             <main>{children}</main>
-            <footer>Footer</footer>
-            {/* <Footer /> */}
+            <Footer />
           </div>
         </Providers>
       </body>

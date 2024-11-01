@@ -14,8 +14,6 @@ export default function Posts({ posts }: { posts: PostProps[] }) {
     setLoadMore(loadMore + articlesShown);
   };
 
-  // console.log(posts);
-
   return (
     <section className="container mx-auto grid grid-cols-1 justify-self-center px-5 py-28 md:py-32">
       <SectionTitle className="mb-8 text-center">Blogs</SectionTitle>

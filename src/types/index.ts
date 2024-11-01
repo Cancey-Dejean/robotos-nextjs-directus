@@ -4,6 +4,8 @@ import { ElementType } from "react";
 export type ImageProps = {
   filename_disk?: string;
   title?: string;
+  height?: number;
+  width?: number;
 };
 export type HeadlineElement = ElementType<string> | undefined;
 

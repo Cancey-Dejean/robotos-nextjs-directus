@@ -29,7 +29,7 @@ export default function CardBlog({
       {featuredImg && (
         <div className="relative h-[300px] w-full overflow-hidden rounded-[20px] lg:h-[200px]">
           <Image
-            src={`${process.env.NEXT_PUBLIC_DIRECTUS_API_ENDPOINT}/assets/${featuredImg.filename_disk}`}
+            src={`${process.env.NEXT_PUBLIC_ASSETS_URL}${featuredImg.filename_disk}?key=optimized`}
             alt={featuredImg.title || ""}
             className="object-cover object-center"
             fill
@@ -38,7 +38,7 @@ export default function CardBlog({
       )}
 
       <div className="flex flex-col gap-2">
-        {title && <h3 className="font-rightGrotesk text-2xl">{title}</h3>}
+        {title && <h3 className="text-2xl">{title}</h3>}
 
         {seo?.meta_description && (
           <div className="line-clamp-2">{seo?.meta_description}</div>

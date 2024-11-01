@@ -30,8 +30,6 @@ export default async function PostPage({
 
   const { title, date_created, date_updated, content, featuredImg, seo } = post;
 
-  // console.log(post);
-
   return (
     <section
       className="h-full bg-yellow-200 bg-fixed px-5 pb-20 pt-28 md:py-32"
@@ -42,7 +40,7 @@ export default async function PostPage({
       <Container>
         <Card>
           <article className="prose mx-auto max-w-3xl py-10 md:py-20">
-            <h1 className="font-rightGrotesk text-xl sm:text-4xl">{title}</h1>
+            <h1 className="text-xl sm:text-4xl">{title}</h1>
 
             {seo?.meta_description && <p>{seo?.meta_description}</p>}
 
@@ -75,7 +73,7 @@ export default async function PostPage({
 
             <Image
               src={
-                `${process.env.NEXT_PUBLIC_DIRECTUS_API_ENDPOINT}/assets/${featuredImg.filename_disk}` ||
+                `${process.env.NEXT_PUBLIC_ASSETS_URL}${featuredImg.filename_disk}?key=optimized` ||
                 "https://dummyimage.com/560x400.png/22c55e/ffffff"
               }
               alt={title}

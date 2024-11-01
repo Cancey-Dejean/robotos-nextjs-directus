@@ -108,7 +108,7 @@ export default function Stats({
       className="border-[16px] border-gray-900 bg-blue-300 bg-cover bg-fixed bg-center py-0 md:py-32"
       id="rarity"
       style={{
-        backgroundImage: `url('${`${process.env.NEXT_PUBLIC_DIRECTUS_API_ENDPOINT}/assets/${bgImg.filename_disk}`}')`,
+        backgroundImage: `url('${`${process.env.NEXT_PUBLIC_ASSETS_URL}${bgImg.filename_disk}?key=optimized`}')`,
       }}
     >
       <Container>
@@ -122,7 +122,7 @@ export default function Stats({
           <div className="flex w-full items-stretch gap-6">
             {types.map(({ items }, index) => (
               <div className="flex-1" key={index}>
-                <p className="mb-3 font-rightGrotesk">Types</p>
+                <p className="mb-3">Types</p>
                 {items && (
                   <div className="flex h-full flex-col gap-2">
                     {items?.map(({ boldText, title }, index) => (
@@ -133,7 +133,7 @@ export default function Stats({
                       <div className="hidden h-full items-center justify-center md:flex">
                         <div className="relative h-[270px] w-[318px]">
                           <Image
-                            src={`${process.env.NEXT_PUBLIC_DIRECTUS_API_ENDPOINT}/assets/${image.filename_disk}`}
+                            src={`${process.env.NEXT_PUBLIC_ASSETS_URL}${image.filename_disk}?key=optimized`}
                             alt={image.title || ""}
                             fill
                           />

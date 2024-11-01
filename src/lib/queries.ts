@@ -17,6 +17,14 @@ export async function getHeader() {
   );
 }
 
+export async function getFooter() {
+  return directus.request(
+    readSingleton("footer", {
+      fields: ["*"],
+    }),
+  );
+}
+
 export async function getPages() {
   return directus.request(
     readItems("pages", {
@@ -34,12 +42,28 @@ export async function getPages() {
             "sitemap_priority",
           ],
         },
-        "blocks.*",
-        "blocks.item.*",
-        "blocks.item.headlineElement.*",
-        "blocks.item.image.*",
-        "blocks.item.bgImg.*",
-        "blocks.item.topImage.*",
+        {
+          blocks: [
+            "*",
+            {
+              item: {
+                block_home_hero: ["*"],
+                block_get_robots: ["*", "bgImg.*", "topImage.*"],
+                block_image_stack: ["*", "image.*"],
+                block_stats: ["*", "bgImg.*", "image.*"],
+                block_latest_posts: ["*"],
+                block_faq: ["*", "faqs.faqs_id.*", "faqs.faqs_id.image.*"],
+              },
+            },
+          ],
+        },
+        // "blocks.*",
+        // "blocks.item.*",
+        // "blocks.item.headlineElement.*",
+        // "blocks.item.image.*",
+        // "blocks.item.bgImg.*",
+        // "blocks.item.topImage.*",
+        // "blocks.item.faqs.faqs_id.*",
       ],
     }),
   );
