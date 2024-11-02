@@ -2,7 +2,6 @@ import Image from "next/image";
 import Container from "@/components/ui/container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Card from "@/components/ui/Cards/Card";
-import { ImageProps } from "@/types";
 
 export const types = [
   {

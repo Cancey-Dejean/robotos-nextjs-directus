@@ -1,12 +1,15 @@
 import Image from "next/image";
 import Card from "../Card";
-import { RobotItem } from "@/types/RobotItem";
 
 export default function CardSimple({
   mainImage,
   mainImageAlt,
   title,
-}: RobotItem) {
+}: {
+  mainImage: string;
+  mainImageAlt: string;
+  title: string;
+}) {
   return (
     <Card className="p-4 md:p-4">
       <Image

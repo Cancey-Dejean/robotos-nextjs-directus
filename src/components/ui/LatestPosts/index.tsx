@@ -2,6 +2,7 @@ import { getPosts } from "@/lib/queries";
 import CardBlog from "@/components/ui/Cards/CardBlog";
 import Container from "@/components/ui/container";
 import SectionTitle from "@/components/ui/SectionTitle";
+import { PostProps } from "@/types";
 
 type LatestPostsProps = {
   item: {
@@ -10,7 +11,7 @@ type LatestPostsProps = {
 };
 
 export default async function LatestPosts({ item }: LatestPostsProps) {
-  const posts = await getPosts();
+  const posts = (await getPosts()) as PostProps[];
 
   const { heading } = item;
   return (

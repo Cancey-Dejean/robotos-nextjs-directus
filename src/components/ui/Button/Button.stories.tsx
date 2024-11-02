@@ -48,42 +48,14 @@ export const Default: Story = {
   },
 };
 
-export const Destructive: Story = {
+export const Mint: Story = {
   args: {
-    variant: "destructive",
+    variant: "mint",
   },
 };
 
-export const Outline: Story = {
+export const Purple: Story = {
   args: {
-    variant: "outline",
+    variant: "purple",
   },
 };
-
-export const Secondary: Story = {
-  args: {
-    variant: "secondary",
-  },
-};
-
-export const Ghost: Story = {
-  args: {
-    variant: "ghost",
-  },
-};
-
-export const Link: Story = {
-  args: {
-    variant: "link",
-  },
-};
-
-// export const ButtonThatLinkToAnotherPlace: Story = {
-//   render: (args) => {
-//     return (
-//       <Button {...args} asChild>
-//         <a href="#">{args.children}</a>
-//       </Button>
-//     );
-//   },
-// };

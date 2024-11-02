@@ -15,6 +15,7 @@ export default function CardBlog({
   buttonLabel,
   featuredImg,
   seo,
+  ...props
 }: {
   className?: string;
   buttonLabel?: string;
@@ -25,6 +26,7 @@ export default function CardBlog({
         "relative flex flex-col items-start gap-5 p-4 md:p-5",
         className,
       )}
+      {...props}
     >
       {featuredImg && (
         <div className="relative h-[300px] w-full overflow-hidden rounded-[20px] lg:h-[200px]">

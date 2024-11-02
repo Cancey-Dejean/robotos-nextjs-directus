@@ -9,13 +9,17 @@ export default function Container({
   size = "base",
   children,
   className,
+  ...props
 }: {
   size?: keyof typeof containerSizes;
   className?: string;
   children: React.ReactNode;
 } & React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className={cn("mx-auto w-full px-4", containerSizes[size], className)}>
+    <div
+      className={cn("mx-auto w-full px-4", containerSizes[size], className)}
+      {...props}
+    >
       {children}
     </div>
   );

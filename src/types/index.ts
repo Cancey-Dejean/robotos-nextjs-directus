@@ -47,4 +47,5 @@ export type PostProps = {
   content: string;
   featuredImg: ImageProps;
   seo: SeoProps;
+  className?: string;
 };
