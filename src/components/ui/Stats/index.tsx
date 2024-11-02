@@ -111,7 +111,7 @@ export default function Stats({
         backgroundImage: `url('${`${process.env.NEXT_PUBLIC_ASSETS_URL}${bgImg.filename_disk}?key=optimized`}')`,
       }}
     >
-      <Container>
+      <Container className="py-10">
         <Card className="mx-auto flex max-w-[740px] flex-col items-start gap-5 max-sm:rounded-none">
           <div className="flex flex-col gap-2">
             {headline && <SectionTitle>{headline}</SectionTitle>}
@@ -119,7 +119,7 @@ export default function Stats({
             {desc && <div dangerouslySetInnerHTML={{ __html: desc }}></div>}
           </div>
 
-          <div className="flex w-full items-stretch gap-6">
+          <div className="flex w-full flex-col items-stretch gap-6 md:flex-row">
             {types.map(({ items }, index) => (
               <div className="flex-1" key={index}>
                 <p className="mb-3">Types</p>

@@ -1,14 +1,6 @@
 import { readItems, readSingleton } from "@directus/sdk";
 import { directus } from "./directus";
 
-export async function getGlobalSettings() {
-  return directus.request(
-    readItems("global", {
-      fields: ["*"],
-    }),
-  );
-}
-
 export async function getHeader() {
   return directus.request(
     readSingleton("header", {
@@ -53,17 +45,11 @@ export async function getPages() {
                 block_stats: ["*", "bgImg.*", "image.*"],
                 block_latest_posts: ["*"],
                 block_faq: ["*", "faqs.faqs_id.*", "faqs.faqs_id.image.*"],
+                block_subscribe: ["*"],
               },
             },
           ],
         },
-        // "blocks.*",
-        // "blocks.item.*",
-        // "blocks.item.headlineElement.*",
-        // "blocks.item.image.*",
-        // "blocks.item.bgImg.*",
-        // "blocks.item.topImage.*",
-        // "blocks.item.faqs.faqs_id.*",
       ],
     }),
   );

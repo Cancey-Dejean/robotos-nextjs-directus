@@ -3,6 +3,7 @@ import GetRobots from "@/components/ui/GetRobots";
 import HeroHome from "@/components/ui/Heroes/HeroHome";
 import ImageStack from "@/components/ui/ImageStack";
 import LatestPosts from "@/components/ui/LatestPosts";
+import Newsletter from "@/components/ui/Newsletter";
 import Stats from "@/components/ui/Stats";
 
 type Section = {
@@ -35,5 +36,9 @@ export const RenderSections = (section: Section) => {
     case "block_faq":
       // @ts-expect-error: No type for item
       return <Faq {...section} key={section.id} item={section.item} />;
+
+    case "block_subscribe":
+      // @ts-expect-error: No type for item
+      return <Newsletter {...section} key={section.id} item={section.item} />;
   }
 };

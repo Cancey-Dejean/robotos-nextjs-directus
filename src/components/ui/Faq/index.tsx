@@ -52,13 +52,15 @@ export default function Faq({
           <div className="flex flex-col gap-12 md:gap-24">
             {faqs.map(({ faqs_id }) => (
               <motion.div key={faqs_id.title} variants={faqVariants}>
-                <Image
-                  src={`${process.env.NEXT_PUBLIC_ASSETS_URL}${faqs_id.image.filename_disk}?key=optimized`}
-                  alt={faqs_id.image.title || "Icon"}
-                  height={faqs_id.image.height || 160}
-                  width={faqs_id.image.width || 160}
-                  className="mb-3"
-                />
+                {faqs_id.image && (
+                  <Image
+                    src={`${process.env.NEXT_PUBLIC_ASSETS_URL}${faqs_id.image.filename_disk}?key=optimized`}
+                    alt={faqs_id.image.title || "Icon"}
+                    height={faqs_id.image.height || 160}
+                    width={faqs_id.image.width || 160}
+                    className="mb-3"
+                  />
+                )}
 
                 <h3 className="mb-3 text-2xl">{faqs_id.title}</h3>
 
